@@ -1,0 +1,72 @@
+{
+  "name": "Javier Ortega Reina",
+  "about": "Soy un profesional con título técnico en Redes y Microinformática y actualmente estoy cursando el grado superior en Desarrollo de Aplicaciones Web (DAW). Mi pasión por la tecnologia y mi compromiso con el aprendizaje continuo me impulsan a seguir creciendo en el campo de las tecnologías de la información. Con experiencia en configuración y mantenimiento de redes, así como en resolución de incidencias de hardware y software, estoy listo para aportar soluciones innovadoras en entornos informaticos.",
+  "studies": [
+    {
+      "degree": "ESO (2017-2021)",
+      "university": "EE. PP. Sagrada Familia (SAFA) (Montellano)",
+      "description": "Educacion Secundaria Obligatoria (ESO)",
+      "image": "/img/safa.png"
+    },
+    {
+      "degree": "GRADO Medio en Redes y Microinformatica (2018-2020)",
+      "university": "IES Castillo de Cote (Montellano)",
+      "description": "El Grado medio de redes y microinformatica formación profesional",
+      "image": "/img/castillocote.png"
+    },
+    {
+      "degree": "GRADO SUPERIOR DESARROLLO DE APLICACIONES WEB (2023-Actualmente)",
+      "university": "Santa Joaquina de Vedruna (Sevilla)",
+      "description": "El Grado Superior en Desarrollo de Aplicaciones Web capacita para diseñar, desarrollar y mantener aplicaciones web utilizando diversas tecnologías y herramientas.",
+      "image": "/img/vedruna.png"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "image": "/img/html.png"
+    },
+    {
+      "name": "MySQL",
+      "image": "/img/mysql.png"
+    },
+    {
+      "name": "CSS",
+      "image": "/img/css.png"
+    },
+    {
+      "name": "Figma",
+      "image": "/img/figma.png"
+    },
+    {
+      "name": "JavaScript",
+      "image": "/img/javascript.png"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Configuración y mantenimiento de redes locales, asegurando su óptimo funcionamiento."
+    },
+    {
+      "name": "Resolución eficiente de incidencias de hardware y software para garantizar la continuidad operativa."
+    },
+    {
+      "name": "Provisión de soporte técnico integral a usuarios, ofreciendo soluciones claras y efectivas en entornos Windows y Linux."
+    },
+    {
+      "name": "Soporte técnico a usuarios en entornos Windows"
+    }
+  ],
+  "references": [
+    {
+      "name": "Victor Dominguez",
+      "image": "/img/victorFoto.jpg",
+      "cargo": "Head of the IT department"
+    },
+    {
+      "name": "Joaquin Borrego",
+      "image": "/img/joaquinFoto.jpg",
+      "cargo": "DAW Teacher"
+    }
+  ]
+}

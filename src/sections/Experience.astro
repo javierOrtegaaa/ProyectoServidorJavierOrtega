@@ -1,0 +1,67 @@
+---
+import ExperienceSection from '../components/ExperienceSection.astro';
+import aboutData from '../data/data.json';  // Importamos los datos del archivo JSON
+const { language } = Astro.props;
+---
+
+<section id="EXPERIENCES" class="relative flex flex-col items-center justify-center min-h-screen py-12 px-8">
+  <!-- Título estilizado -->
+  <div class="text-center mb-12">
+    <h2 id="experience-title" class="text-5xl font-extrabold text-gray-800 mb-4 opacity-0 transform translate-x-10 transition-all duration-1000">
+      {'EXPERIENCES'}  <!-- Título en inglés, ya que es la única lengua disponible -->
+    </h2>
+
+    <!-- Línea decorativa -->
+    <div class="w-16 h-1 bg-blue-500 mx-auto mb-6"></div>
+  </div>
+
+  <!-- Contenedor de las tarjetas de experiencia en un grid de 3 columnas -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+    {aboutData.experiences.map((experience, index) => (
+      <ExperienceSection
+        key={index}
+        name={experience.name}  
+      
+        language={language}
+      />
+    ))}
+  </div>
+</section>
+
+<!-- Incluye el archivo JS para la animación -->
+<script type="module" src="/src/styles/experience.js"></script>
+
+<style>
+  /* Aseguramos que la sección ocupe al menos el 100% de la ventana */
+  #EXPERIENCES {
+    min-height: 100vh; /* Asegura que la sección ocupe toda la altura de la pantalla */
+    display: flex;     /* Usamos flexbox para centrar todo el contenido */
+    flex-direction: column;
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding-top: 4rem;  /* Asegura que el título no quede cubierto por el menú si existe */
+  }
+
+  /* Asegura que las tarjetas se distribuyan adecuadamente */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);  /* Una columna por defecto */
+    gap: 2rem;  /* Espacio entre las tarjetas */
+    justify-items: center; /* Centra las tarjetas horizontalmente */
+    align-items: start;  /* Alinea las tarjetas al principio de la celda (no centradas) */
+  }
+
+  /* Ajustes para pantallas medianas */
+  @media (min-width: 640px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);  /* Dos columnas en pantallas medianas */
+    }
+  }
+
+  /* Ajustes para pantallas grandes */
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);  /* Tres columnas en pantallas grandes */
+    }
+  }
+</style>

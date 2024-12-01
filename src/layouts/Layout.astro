@@ -1,0 +1,56 @@
+---
+const { title, data } = Astro.props;
+import Navbar from '../components/Navbar.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-100">
+
+  <!-- Capas de fondo global con TailwindCSS -->
+  <div class="fixed inset-0 z-[-999] bg-white bg-opacity-90 mix-blend-overlay"></div>
+  <div class="fixed inset-0 z-[-998] bg-gradient-to-br from-gray-100 via-white to-transparent opacity-75"></div>
+  <div class="fixed inset-0 z-[-997] bg-[url('/img/concrete-dark.png')] bg-repeat opacity-30 mix-blend-multiply pointer-events-none"></div>
+
+  <!-- Navbar -->
+  <Navbar logoSrc="/img/logo.png" userImgSrc="/img/usuario.png" />
+
+  <!-- Contenido principal -->
+  <main>
+    <slot /> <!-- El contenido de cada sección se insertará aquí -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-indigo-800 via-blue-600 to-indigo-800 text-white py-12 mt-16 shadow-lg">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center px-6">
+      
+      <!-- Texto de copyright -->
+      <p class="text-lg text-center sm:text-left mb-6 sm:mb-0 font-semibold">&copy; Copyright 2024 | All rights reserved {data.name}</p>
+      
+      <!-- Contenedor de los íconos de redes sociales -->
+      <div class="flex space-x-6 justify-center sm:justify-end">
+        <!-- GitHub -->
+        <a href="https://github.com/javierOrtegaaa" target="_blank" class="transform transition-transform duration-300 hover:scale-110">
+          <img src="/img/github.png" alt="GitHub" class="w-12 h-12 rounded-full border-2 border-white hover:border-indigo-300 p-2" />
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/javier-ortega-reina-419455303/" target="_blank" class="transform transition-transform duration-300 hover:scale-110">
+          <img src="/img/linkedin.jpg" alt="LinkedIn" class="w-12 h-12 rounded-full border-2 border-white hover:border-indigo-300 p-2" />
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/oortega05_/profilecard/?igsh=Z2h3azF1dmV2ZmUx" target="_blank" class="transform transition-transform duration-300 hover:scale-110">
+          <img src="/img/instagram.png" alt="Instagram" class="w-12 h-12 rounded-full border-2 border-white hover:border-indigo-300 p-2" />
+        </a>
+      </div>
+      
+    </div>
+  </footer>
+  
+</body>
+</html>

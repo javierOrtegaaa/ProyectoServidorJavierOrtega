@@ -1,0 +1,72 @@
+{
+  "name": "Javier Ortega Reina",
+  "about": "I am a professional with a technical degree in Networks and Microinformatics and am currently pursuing a higher degree in Web Application Development (DAW). My passion for technology and commitment to continuous learning drive me to keep growing in the field of information technology. With experience in network configuration and maintenance, as well as troubleshooting hardware and software issues, I am ready to contribute innovative solutions in IT environments.",
+  "studies": [
+    {
+      "degree": "Compulsory Secondary Education (ESO) (2017-2021)",
+      "university": "EE. PP. Sagrada Familia (SAFA) (Montellano)",
+      "description": "Compulsory Secondary Education (ESO)",
+      "image": "/img/safa.png"
+    },
+    {
+      "degree": "Middle Degree in Networks and Microinformatics (2018-2020)",
+      "university": "IES Castillo de Cote (Montellano)",
+      "description": "The Middle Degree in Networks and Microinformatics is a vocational training program.",
+      "image": "/img/castillocote.png"
+    },
+    {
+      "degree": "Higher Degree in Web Application Development (2023-Present)",
+      "university": "Santa Joaquina de Vedruna (Seville)",
+      "description": "The Higher Degree in Web Application Development trains students to design, develop, and maintain web applications using various technologies and tools.",
+      "image": "/img/vedruna.png"
+    }
+  ],
+"skills": [
+    {
+      "name": "HTML",
+      "image": "/img/html.png"
+    },
+    {
+      "name": "MySQL",
+      "image": "/img/mysql.png"
+    },
+    {
+      "name": "CSS",
+      "image": "/img/css.png"
+    },
+    {
+      "name": "Figma",
+      "image": "/img/figma.png"
+    },
+    {
+      "name": "JavaScript",
+      "image": "/img/javascript.png"
+    }
+  ],
+"experiences": [
+  {
+    "name": "Configuration and maintenance of local networks, ensuring their optimal functioning."
+  },
+  {
+    "name": "Efficient resolution of hardware and software issues to ensure operational continuity."
+  },
+  {
+    "name": "Provision of comprehensive technical support to users, offering clear and effective solutions in Windows and Linux environments."
+  },
+  {
+    "name": "Technical support to users in Windows environments."
+  }
+],
+"references": [
+  {
+    "name": "Victor Dominguez",
+    "image": "/img/victorFoto.jpg",
+    "cargo": "Head of the IT department"
+  },
+  {
+    "name": "Joaquin Borrego",
+    "image": "/img/joaquinFoto.jpg",
+    "cargo": "DAW Teacher"
+  }
+]
+}

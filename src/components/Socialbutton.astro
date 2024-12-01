@@ -1,0 +1,39 @@
+---
+interface Props {
+    href: string
+    classList?: string
+}
+
+const { href, classList } = Astro.props
+---
+
+
+<a href={href} target="_blank" rel="noopener noreferrer" class={classList}>
+    <slot name="before" />
+    <slot />
+    <slot name="after" />
+</a>
+
+<style>
+    a {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        width: max-content;
+        padding: .5rem 1rem;
+        background-color: var(--clr-nav);
+        border-radius: 100vw;
+        border: 1px solid var(--clr-border);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 8px 0 rgb(0 0 0 / .2);
+        font-size: var(--fs-200);
+        cursor: pointer;
+        opacity: .9;
+        transition: transform .2s ease-in-out, filter .2s ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.1);
+        filter: brightness(1.15);
+    }
+</style>

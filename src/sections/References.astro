@@ -1,0 +1,62 @@
+---
+import ExperienceSection from "../components/ExperienceSection.astro"; // Corrige el nombre del archivo
+
+const { data, language } = Astro.props;
+---
+
+<section id="references" class="mt-16 text-center">
+  <!-- Título de la sección centrado -->
+  <h2 
+    id="references-title" 
+    class="text-5xl font-extrabold text-gray-800 mb-4 opacity-100 transform translate-x-0 transition-all duration-1000 text-center"
+  >
+    {language === 'es' ? 'REFERENCIAS' : 'REFERENCES'}
+  </h2>
+  
+  <!-- Contenedor para la línea decorativa -->
+  <div class="flex flex-col items-center mb-8">
+    <!-- Línea decorativa azul debajo del título -->
+    <div class="w-16 h-1 bg-blue-500 mb-8"></div>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-6">
+    {data?.references?.slice(0, 2).map((reference: { name: string; image: string; cargo: string }) => (
+      <div class="bg-gray-100 shadow-md rounded-lg flex flex-col items-center p-6 w-full sm:w-72 md:w-80 lg:w-62 shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105 border-2 border-gray-200">
+        <img 
+          src={reference.image} 
+          alt={reference.name} 
+          class="w-24 h-24 object-cover rounded-full mb-4"
+        />
+        <h3 class="text-lg font-semibold">{reference.name}</h3>
+        <h3 class="text-sm font-regular text-gray-600">{reference.cargo}</h3>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* Estilo para asegurar consistencia con SKILLS */
+  #references {
+    min-height: 100vh; /* Asegura que la sección ocupe toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem; /* Ajusta el espacio superior si el menú cubre la parte superior */
+  }
+
+  #references-title + .w-16 {
+    margin-left: 0; /* Ajusta la línea para que esté centrada bajo el título */
+  }
+
+  /* Ajustes para pantallas más pequeñas */
+  @media (max-width: 767px) {
+    #references {
+      padding-top: 2.5rem; /* Menos espacio en pantallas pequeñas */
+    }
+
+    #references-title {
+      font-size: 3rem; /* Ajusta el tamaño del texto para pantallas pequeñas */
+    }
+  }
+</style>

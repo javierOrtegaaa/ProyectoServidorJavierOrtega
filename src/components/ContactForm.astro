@@ -1,0 +1,78 @@
+---
+import { showContactCards } from '../styles/contactForm';
+---
+
+<!-- Contenedor del título con la flecha a la izquierda -->
+<div class="bg-orange-500 text-white p-4 flex items-center">
+  <a href="/" class="flex items-center text-white hover:underline">
+    <!-- Icono de flecha hacia atrás -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7M4 12h16"></path>
+    </svg>
+    <span>Volver a la página principal</span>
+  </a>
+</div>
+
+<!-- Pregunta de contacto -->
+<div class="mt-6 text-center">
+  <h2 class="text-2xl font-bold text-gray-700">¿Cómo podemos ayudarte?</h2>
+</div>
+
+<form id="contact-form" method="POST" action="?submitted=true" class="space-y-6">
+  <!-- Correo electrónico -->
+  <div>
+    <label for="email" class="block text-gray-700 font-medium">Correo electrónico <span class="text-red-500">*</span></label>
+    <input type="email" id="email" name="email" required class="w-full mt-2 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+  </div>
+
+  <!-- Mensaje profesional -->
+  <div class="flex items-center">
+    <input type="checkbox" id="fprodional" name="fprodional" class="mr-2">
+    <label for="fprodional" class="text-gray-700">Al enviar este formulario, confirmo que la información proporcionada se almacenará de acuerdo con nuestros estándares profesionales y se utilizará exclusivamente para el propósito previsto.</label>
+  </div>
+
+  <!-- Nombre -->
+  <div>
+    <label for="nombre" class="block text-gray-700 font-medium">Nombre <span class="text-red-500">*</span></label>
+    <input type="text" id="nombre" name="nombre" required class="w-full mt-2 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+  </div>
+
+  <!-- Tipo de consulta -->
+  <div>
+    <label for="consulta" class="block text-gray-700 font-medium">¿Cuál es tu consulta? <span class="text-red-500">*</span></label>
+    <select id="consulta" name="consulta" required class="w-full mt-2 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+      <option value="" disabled selected>- Selecciona una opción -</option>
+      <option value="contactar_javier">Contactar con Javier</option>
+      <option value="contactar_administrador">Contactar con su administrador</option>
+    </select>
+  </div>
+
+  <!-- Asunto -->
+  <div>
+    <label for="asunto" class="block text-gray-700 font-medium">Asunto <span class="text-red-500">*</span></label>
+    <input type="text" id="asunto" name="asunto" required class="w-full mt-2 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+  </div>
+
+  <!-- Descripción -->
+  <div>
+    <label for="descripcion" class="block text-gray-700 font-medium">Descripción <span class="text-red-500">*</span></label>
+    <textarea id="descripcion" name="descripcion" rows="5" required class="w-full mt-2 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+  </div>
+
+  <!-- Botón de envío -->
+  <div class="text-center">
+    <button type="submit" class="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600">
+      Enviar solicitud
+    </button>
+  </div>
+</form>
+
+<!-- Mensaje de éxito después del envío -->
+{Astro.request.url.includes("submitted=true") && (
+  <div class="bg-green-500 text-white p-4 rounded-md mt-6 text-center">
+    <p>¡Tu formulario ha sido enviado exitosamente! Nos pondremos en contacto contigo pronto.</p>
+  </div>
+)}
+
+
+

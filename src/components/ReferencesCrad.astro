@@ -1,0 +1,29 @@
+---
+const { name, language } = Astro.props;
+---
+
+<div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-sm flex flex-col items-center space-y-4 border border-gray-200 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 ease-in-out experience-card opacity-0 transform scale-90 translate-y-10 transition-all duration-1000">
+  <!-- Contenedor para la imagen o ícono -->
+  <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-md mb-4 transform hover:scale-110 transition-transform duration-300">
+    <span class="text-white text-2xl font-bold">🚀</span> <!-- Icono destacado -->
+  </div>
+
+  <!-- Línea decorativa -->
+  <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-4"></div>
+
+  <!-- Contenido textual -->
+  <div class="flex flex-col items-center text-center">
+    <h3 class="text-lg font-bold text-gray-800 mb-2 transition-colors duration-300 hover:text-blue-500">
+      {name}
+    </h3>
+    <p class="text-sm text-gray-600">
+      {/* Agrega aquí una breve descripción */}
+      {language === 'es' ? 'Experiencia destacada' : 'Featured Experience'}
+    </p>
+  </div>
+
+  <!-- Botón opcional -->
+  <button class="px-4 py-2 mt-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300">
+    {language === 'es' ? 'Ver más' : 'Learn More'}
+  </button>
+</div>

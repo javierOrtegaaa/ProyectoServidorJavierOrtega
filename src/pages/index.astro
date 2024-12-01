@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Experience from '../sections/Experience.astro';
+import Projects from '../sections/Projects.astro';
+import About from '../sections/About.astro';
+import Skills from '../sections/Skills.astro';
+import PaginaPrincipal from '../sections/PaginaPrincipal.astro';
+import Studies from '../sections/Studies.astro';
+import References from '../sections/References.astro';
+
+// Obtener el parámetro 'lang' de la URL de la página
+const url = new URL(Astro.request.url); // Usamos Astro.request.url para acceder a la URL completa
+const language = url.searchParams.get('lang') || 'en'; // Accedemos a los parámetros de la URL
+
+// Importar el archivo JSON basado en el valor de 'language'
+const data = language === 'es' ? await import('../data/data_es.json') : await import('../data/data.json');
+---
+
+<Layout title={language === 'es' ? 'Portafolio de Javier Ortega' : 'Javier Ortega Portfolio'} data={data}>
+  <!-- Mensaje central que aparece después de la animación -->
+  <div id="message" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-7xl font-bold text-white opacity-0 transition-opacity duration-1000">
+    {language === 'es' ? 'Portafolio de Javier Ortega' : 'Javier Ortega Portfolio'}
+  </div>
+
+  <main>
+    <PaginaPrincipal language={language} />
+    <About language={language} />
+    <Studies language={language} />
+    <Projects language={language} />
+    <Skills language={language} />
+    <Experience language={language} experiences={data.experiences} />
+    <References data={data} language={language} />
+    
+  
+  </main>
+</Layout>

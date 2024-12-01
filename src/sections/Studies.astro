@@ -1,0 +1,54 @@
+---
+// Importamos el componente de StudyCard y los datos
+import StudyCard from '../components/StudyCard.astro';
+import aboutData from '../data/data.json';
+
+const { language } = Astro.props;
+---
+
+<!-- Sección de Estudios con 100vh de altura y espacio arriba para evitar el solapamiento con el menú -->
+<section id="STUDIES" class="relative text-left py-12 px-6 min-h-screen pt-24">
+  <!-- Título de la sección centrado y alineado con animación -->
+  <h2 
+    class="text-5xl font-extrabold text-gray-800 mb-4 opacity-100 transform translate-x-0 transition-all duration-1000 text-center"
+  >
+    {language === 'es' ? 'ESTUDIOS' : 'STUDIES'}
+  </h2>
+
+  <!-- Contenedor para la línea decorativa -->
+  <div class="flex flex-col items-center mb-8">
+    <!-- Línea decorativa azul debajo del título -->
+    <div class="w-16 h-1 bg-blue-500 mb-8"></div>
+
+    <!-- Verificamos si los datos de estudios están disponibles -->
+    {aboutData && aboutData.studies && Array.isArray(aboutData.studies) && aboutData.studies.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
+        {aboutData.studies.map((study, index) => (
+          <StudyCard
+            key={index}
+            title={study.degree}
+            school={study.university}
+            description={study.description}
+            imageSrc={study.image}
+          />
+        ))}
+      </div>
+    ) : (
+      <p class="text-center text-xl text-gray-600">No se han encontrado estudios disponibles.</p>
+    )}
+  </div>
+</section>
+
+<!-- Estilos adicionales para que solo la página de estudios ocupe 100vh -->
+<style>
+  /* Establece la altura mínima para la sección */
+  #STUDIES {
+    min-height: 100vh; /* 100% de la altura de la pantalla */
+  }
+
+  /* Opcional: agregar margen cero a la parte superior si necesitas un espacio en blanco */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>

@@ -1,0 +1,249 @@
+---
+import MenuIcon from "../icons/Menu.astro"
+import BriefcaseIcon from "../icons/Briefcase.astro"
+import AppsIcon from "../icons/Apps.astro"
+import UserIcon from "../icons/User.astro"
+import SendIcon from "../icons/Send.astro"
+import AtIcon from "../icons/At.astro"
+
+---
+
+<header class="header">
+    <nav>
+        <a href="#ABOUTME">About Me</a>
+        <a href="/#STUDIES">Studies</a>
+        <a href="/#PROJECTS">Projects</a>
+        <a href="/#SKILLS">Skills</a>
+        <a href="/#EXPERIENCES">Experience</a>  
+        <a href="/#references">References</a>
+        <a href="/contacto">Contact</a>
+   
+    </nav>
+    
+</header>
+
+<header class="mobile-header" id="mobileHeader">
+    <ul>
+        <li>Javier Ortega</li>
+        <li>
+            <button aria-label="open navigation menu">
+                <MenuIcon size="28" />
+            </button>
+        </li>
+    </ul>
+    <a href="/#top">
+        <img src="/images/profile.webp" alt="Retrato de avier Ortega" width="48" height="48">
+        <div>
+            <h3>avier Ortega</h3>
+            <p>Desarrollador Web</p>
+        </div>
+    </a>
+    <nav>
+        <a href="/#experiencia">
+            <BriefcaseIcon size="24" />
+            Experiencia
+        </a>
+        <a href="/#proyectos">
+            <AppsIcon size="24" />
+            Proyectos
+        </a>
+        <a href="/#sobre-mi">
+            <UserIcon size="24" />
+            Sobre mi
+        </a>
+        <a href="/#contacto">
+            <SendIcon size="24" />
+            Contacto
+        </a>
+        <a href="/blog">
+            <AtIcon size="24" />
+            Blog
+        </a>
+    </nav>
+</header>
+
+<style>
+    .mobile-header {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+    }
+
+    .header nav {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding: .45rem .75rem;
+        border: 1px solid var(--clr-border-accent);
+        border-radius: 100vw;
+        background-color: var(--clr-nav);
+        filter: drop-shadow(0 0 4rem hsla(235, 80%, 72%, .35));
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px 0 rgb(0 0 0 / .25);
+    }
+
+    .header nav:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: url(/images/concrete.png);
+        opacity: .1;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .header nav a {
+        padding: .35rem .9rem;
+        border-radius: 100vw;
+        font-size: var(--fs-300);
+        opacity: .75;
+        transition: opacity 200ms ease-in-out, background-color 250ms ease-in-out;
+        z-index: 1;
+    }
+
+    .header nav a:hover {
+        opacity: 1;
+        background-color: rgb(160 160 160 / 0.15);
+    }
+
+    @media (width < 560px) {
+        .header {
+            display: none;
+        }
+
+        .mobile-header {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            padding: 1.5rem 2rem 1.25rem 2rem;
+            width: 100%;
+            /* height: 8rem; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #181a2c;
+            border-top-left-radius: .75rem;
+            border-top-right-radius: .75rem;
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            transform: translateY(84.5%);
+            transition: transform 250ms ease-in-out,
+                        padding-top 150ms ease-in-out;
+        }
+
+        .mobile-header::before {
+            --length: 30%;
+
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 0;
+            width: var(--length);
+            height: 6px;
+            margin-left: calc((100% - var(--length)) / 2);
+            background-color: var(--clr-border-accent);
+            border-radius: 100vw;
+        }
+
+        .mobile-header ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 1rem;
+            list-style: none;
+            font-size: var(--fs-200);
+        }
+
+        .mobile-header ul li:first-of-type {
+            cursor: pointer;
+        }
+
+        .mobile-header ul button {
+            border-radius: .5rem;
+            border: none;
+            background-color: transparent;
+            transition: transform 200ms ease-in-out;
+        }
+
+        .mobile-header ul button:hover {
+            cursor: pointer;
+            transform: rotateX(35deg);
+        }
+
+        .mobile-header a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: .5rem;
+            transition: background-color .2s ease-in-out;
+        }
+
+        .mobile-header a img {
+            width: 48px;
+            height: 48px;
+            aspect-ratio: 1 / 1;
+            border-radius: 100vw;
+        }
+        
+        .mobile-header a h3 {
+            font-size: var(--fs-300);
+        }
+
+        .mobile-header a p {
+            font-size: var(--fs-300);
+            font-weight: 300;
+        }
+
+        .mobile-header a:hover {
+            background-color: rgb(255 255 255 / .1);
+        }
+
+        .mobile-header nav {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin-top: 1rem;
+        }
+        
+        .mobile-header nav a {
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+        }
+
+        .show-mobile-header ul {
+            animation: fade-out 100ms forwards 50ms;
+        }
+
+        .show-mobile-header {
+            transform: translateY(0);
+            padding-top: 2.5rem;
+        }
+
+        @keyframes fade-out {
+            from {
+                opacity: 1;
+                display: flex;
+            }
+            to {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+    }
+</style>
+

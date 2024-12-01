@@ -1,0 +1,49 @@
+/* Estilo para el contenedor de las experiencias */
+#experiences {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  /* Tarjetas individuales */
+  #experiences .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  
+  /* Estilos para la tarjeta */
+  #experiences .bg-white {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #experiences .bg-white:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  #experiences .bg-blue-500 {
+    background-color: #3b82f6;
+  }
+  
+  #experience-modal {
+    display: none;
+  }
+  
+  #experience-modal.show {
+    display: flex;
+  }
+  
+  #experience-modal .bg-white {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para el botón */
+  button {
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2563eb;
+  }
+  

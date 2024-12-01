@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Javier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Estilos para la sección Hero */
+    .hero-section {
+      background-image: url('img/fotoPrincipal.png'); /* Cambia por la ruta de tu imagen */
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: black; /* Cambié el color de todo el texto a negro */
+    }
+
+    /* Estilo para la imagen en el lado izquierdo con efecto 3D */
+    .image-container {
+      width: 500px; /* Aumenté el tamaño a 500px */
+      height: 500px; /* Aumenté el tamaño a 500px */
+      position: absolute;
+      left: 15%; /* Moved the image more to the right by changing the left value */
+      top: 50%;
+      transform: translateY(-50%);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Cambié de cover a contain para no cortar la imagen */
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hacer que la imagen gire al pasar el mouse */
+    .image-container:hover img {
+      transform: rotateY(0deg);
+    }
+
+    /* Contenedor de texto a la derecha */
+    .content {
+      position: absolute;
+      right: 5%; /* Alineación completamente a la derecha */
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: left;
+      z-index: 2;
+      color: black; /* Cambié el color del texto a negro */
+      width: 50%; /* Controlar el ancho para no exceder el área */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Estilo para las líneas horizontales */
+    .line {
+      border-top: 1px solid rgba(0, 0, 0, 0.3); /* Cambié el color de las líneas a un tono más oscuro */
+      margin: 10px 0;
+    }
+
+    /* Estilo del título */
+    h1 {
+      font-size: 3.5rem; /* Ajusta el tamaño */
+      font-weight: bold;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: black; /* Cambié el color a negro */
+    }
+
+    /* Estilo de la pequeña descripción */
+    .description {
+      font-size: 1.2rem;
+      color: rgba(0, 0, 0, 0.7); /* Cambié el color de la descripción a negro con opacidad */
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    /* Subrayado del nombre en la descripción */
+    .highlight {
+      color: #FF4F5B; /* Este color no ha cambiado, pero lo mantengo en caso de querer destacar algo */
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  
+  <!-- Hero Section -->
+  <section class="relative hero-section">
+    <!-- Imagen en 3D en el lado izquierdo -->
+    <div class="image-container">
+      <img src="img/javier.png" alt="Your Image"> <!-- Cambia por tu propia imagen -->
+    </div>
+
+    <!-- Contenedor de texto con líneas horizontales como estantería -->
+    <div class="content">
+      <!-- Línea superior como estante -->
+      <div class="line"></div>
+
+      <!-- Texto de bienvenida -->
+      <p class="text-sm text-gray-700 uppercase tracking-wide">Freelance Digital Designer</p> <!-- Cambié el color a gris oscuro -->
+
+      <!-- Línea separadora -->
+      <div class="line"></div>
+
+      <h1 class="text-5xl font-extrabold text-gray-900 mt-2 leading-tight"> <!-- Cambié el color a gris oscuro -->
+        Hello, I’m <span class="highlight">Javier</span>
+      </h1>
+
+      <!-- Línea separadora -->
+      <div class="line"></div>
+
+      <p class="description">
+        Welcome to my World.
+      </p>
+
+      <!-- Línea separadora -->
+      <div class="line"></div>
+
+      <p class="description">
+        Javier Ortega Reina is a skilled IT professional specializing in Web Application Development (DAW), with expertise in programming, web design, and efficient digital solutions
+      </p>
+
+      <!-- Línea inferior como estante -->
+      <div class="line"></div>
+    </div>
+  </section>
+
+</body>
+</html>
